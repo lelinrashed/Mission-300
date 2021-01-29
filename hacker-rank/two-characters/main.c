@@ -3,15 +3,15 @@
 
 int main()
 {
-    int length, i, j, k = 0, l, f = 0, m = 1, n = 1, result = 0, answer = 0;
-    scanf("%d", &length);
+    int lenght, k = 0, f = 0, result = 0, m = 1, n = 1, answer = 0;
+    scanf("%d", &lenght);
 
-    char s[length], a[26];
+    char s[lenght], a[26];
     scanf("%s", s);
 
-    for (i = 0; s[i] != '\0'; i++)
+    for (int i = 0; s[i] != '\0'; i++)
     {
-        for (j = k; j >= 0; j--)
+        for (int j = k; j >= 0; j--)
         {
             if (s[i] == a[j])
             {
@@ -28,11 +28,11 @@ int main()
         }
     }
 
-    for (i = 0; i <= k; i++)
+    for (int i = 0; i <= k; i++)
     {
-        for (j = i + 1; j <= k; j++)
+        for (int j = i + 1; j <= k; j++)
         {
-            for (l = 0; s[l] != '\0'; l++)
+            for (int l = 0; s[l] != '\0'; l++)
             {
                 if (a[i] == s[l] && n == 1)
                 {
@@ -40,7 +40,7 @@ int main()
                     n = 0;
                     m = 1;
                 }
-                else if (a[i] == s[l])
+                else if(a[i] == s[l])
                 {
                     result = 0;
                     break;
@@ -57,19 +57,18 @@ int main()
                     break;
                 }
             }
-            if (result > answer)
+            if(result > answer)
             answer = result;
             result = 0;
-            m = n = 1;
+            m=n=1;
         }
     }
 
     if (answer == 1)
-    {
-        printf("0");
-    }
+    printf("0");
     else
-        printf("%d", answer);
+    printf("%d", answer);
+    
 
     return 0;
 }
